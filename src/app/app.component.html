@@ -1,3 +1,22 @@
 <h1>
   {{title}}
 </h1>
+
+
+<div class="container-fluid">
+  <div class="row col-sm-offset-2">
+    <textarea rows="10" class="col-sm-4" [(ngModel)]="textDataTa" (keypress)="store($event)"></textarea>
+    <div class="col-sm-4">
+      <markdown [data]="textData"></markdown>
+    </div>
+  </div>
+</div>
+
+<div class="row  col-sm-offset-4">
+  <button (click)="getMarkDown()">Render</button>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" [checked]="live" (change)="live = !live" /> Live
+    </label>
+  </div>
+</div>
